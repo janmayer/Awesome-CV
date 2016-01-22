@@ -102,6 +102,19 @@ Alternatively, you can have Github automatically generate the PDFs and upload th
 
 Once this is done, Github will automatically generate your new PDFs after each push. This can be found by going to "releases".
 
+##### List of Publications
+
+You can generate list of publication from [**BibTeX**](http://www.bibtex.org/) source files.
+[**BibLaTeX**](https://www.ctan.org/pkg/biblatex) and [**biber**](https://www.ctan.org/pkg/biber) should be available.
+
+To generate document with the list of publications, at a command prompt, run
+
+```bash
+$ xelatex {your-cv}.tex
+$ biber {your-cv}
+$ xelatex {your-cv}.tex
+```
+
 
 ## Credit
 
