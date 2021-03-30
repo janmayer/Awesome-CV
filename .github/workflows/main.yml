@@ -12,19 +12,25 @@ jobs:
     container: thomasweise/texlive
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout Repo
         uses: actions/checkout@v2
 
-      - name: Install FontAwesome
+      - name: Install Fonts & Utils
         run: |
           apt-get update -y
-          apt-get install -y fonts-font-awesome
-          apt-get install -y texlive-fonts-extra
+          apt-get install -y texlive-bibtex-extra biber unzip
+          apt-get install -y fonts-font-awesome fonts-roboto
+          wget https://www.fontsquirrel.com/fonts/download/source-sans-pro.zip
+          mkdir -p ~/.fonts
+          unzip source-sans-pro.zip -d ~/.fonts
+          fc-cache -f -v
 
       # Use included Makefile
       - name: Compile
-        run: make
+        run: |
+          cd examples
+          mkdir build
+          make
 
       # Upload new PDFs as a new release
       - name: Release
@@ -33,6 +39,6 @@ jobs:
           repo_token: ${{ secrets.CV_SECRET }}
           automatic_release_tag: "latest"
           files: |
-            examples/cv.pdf
-            examples/resume.pdf
-            examples/coverletter.pdf
+            examples/build/cv.pdf
+            examples/build/resume.pdf
+            examples/build/coverletter.pdf

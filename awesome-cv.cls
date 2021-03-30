@@ -94,8 +94,8 @@
 %                Configuration for directory locations
 %-------------------------------------------------------------------------------
 % Configure a directory location for fonts(default: 'fonts/')
-\newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
-\fontdir
+% \newcommand*{\fontdir}[1][../fonts/]{\def\@fontdir{#1}}
+% \fontdir
 
 
 %-------------------------------------------------------------------------------
@@ -161,10 +161,10 @@
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
 % Set the FontAwesome font to be up-to-date.
-\setfontfamily\FA[Path=\@fontdir]{FontAwesome}
+%\setfontfamily\FA[Path=\@fontdir]{FontAwesome}
 % Set font for header (default is Roboto)
 \newfontfamily\headerfont[
-  Path=\@fontdir,
+  %Path=\@fontdir,
   UprightFont=*-Regular,
   ItalicFont=*-Italic,
   BoldFont=*-Bold,
@@ -172,7 +172,7 @@
 ]{Roboto}
 
 \newfontfamily\headerfontlight[
-  Path=\@fontdir,
+  %Path=\@fontdir,
   UprightFont=*-Thin,
   ItalicFont=*-ThinItalic,
   BoldFont=*-Medium,
@@ -181,7 +181,7 @@
 
 % Set font for footer (default is Source Sans Pro)
 \newfontfamily\footerfont[
-  Path=\@fontdir,
+  %Path=\@fontdir,
   UprightFont=*-Regular,
   ItalicFont=*-It,
   BoldFont=*-Bold
@@ -189,7 +189,7 @@
 
 % Set font for body (default is Source Sans Pro)
 \newfontfamily\bodyfont[
-  Path=\@fontdir,
+  %Path=\@fontdir,
   UprightFont=*-Regular,
   ItalicFont=*-It,
   BoldFont=*-Bold,
@@ -197,7 +197,7 @@
 ]{SourceSansPro}
 
 \newfontfamily\bodyfontlight[
-  Path=\@fontdir,
+  %Path=\@fontdir,
   UprightFont=*-Light,
   ItalicFont=*-LightIt,
   BoldFont=*-Semibold,
@@ -206,7 +206,7 @@
 
 % Set main font, same as for body (default is Source Sans Pro)
 \setmainfont[
-  Path=\@fontdir,
+  %Path=\@fontdir,
   UprightFont=*-Regular,
   ItalicFont=*-It,
   BoldFont=*-Bold,
